@@ -58,17 +58,7 @@ $(function() {
 			$('#timeline').append(html);
 		});
 
-		// add a year marker for each year that has a post
-		$.each(years, function(i, val){
-			var timestamp;
-			if (direction == 'newest')
-				timestamp = getTimestamp(val, false);
-			else
-				timestamp = getTimestamp(val, true);
-			var context = {year: val, timestamp: timestamp};
-			var html = yearMarkerTemplate(context);
-			$('#timeline').append(html);
-		});
+
 
 		$('#timeline').imagesLoaded(function(){
 			$('#timeline').isotope({
